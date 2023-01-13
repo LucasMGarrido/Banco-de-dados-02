@@ -1,7 +1,7 @@
 const noteModel = require('../models/noteModel');
 
 class noteController{
-    async store(req, res){ //cria o produto
+    async store(req, res){ //cria o nota
         try{
             const newNote = req.body;
 

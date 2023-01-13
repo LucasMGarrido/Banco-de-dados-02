@@ -1,9 +1,15 @@
-const { Router } = require('express');
-const routes = Router();
+const express = require('express')
+const routes = express.Router()
 const noteController = require('./controllers/noteController')
+const app = express()
+const path = require('path')
+
+app.set('view engine' , 'ejs')
+
+routes.get('/', (req, res) => res.redirect('/dev'))
 
 routes.get('/dev', (req, res) => {
-    return res.status(200).json({ mensagem: "Server funcionando" });
+    res.render(path.join(__dirname + '/front.ejs'))
 })
 
 routes.post('/notes', noteController.store);

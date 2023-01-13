@@ -2,7 +2,11 @@ const express = require('express');
 const routes = require('./routes');
 const app = express();
 
-app.use(express.json());
-app.use(routes);
+function main (){
+    app.use(express.json());
+    app.use(routes);
 
-module.exports = app;
+    app.listen(3000, () => console.log('Server em funcionamento - porta 3000'));
+}
+
+module.exports = main;
