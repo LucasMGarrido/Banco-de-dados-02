@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form action="/atualizar/<%= items._id %>?_method=PUT" method="post">
+			<input
+				class="titulo1"
+				type="text"
+				name="title"
+				placeholder="Título"
+				value="<%= items.title %>"
+			/>
+			<textarea
+				class="anotacoes"
+				name="content"
+				rows="19"
+				placeholder="Anotações"
+			>
+<%= items.content %></textarea
+			>
+			<div class="btnCriar">
+				<button id="criar" type="submit">
+					<ion-icon name="add-circle-outline"></ion-icon>Editar
+				</button>
+			</div>
+		</form>
+	</body>
+</html>

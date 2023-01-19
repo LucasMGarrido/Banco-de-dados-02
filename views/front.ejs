@@ -68,7 +68,7 @@ textarea:focus, input:focus, select:focus {
     border: 0 none;
     outline: 0;
     background-color: transparent;
-} 
+}
 
 textarea{
     resize:none;
@@ -130,10 +130,10 @@ textarea{
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+
     background: rgba(64, 187, 244, 0.9);
     border-radius: 30px;
-    
+
     width: 400px;
     height: 400px;
     /*background-color: #b9b9ed;*/
@@ -243,7 +243,7 @@ textarea{
     height: 200px;
 
     margin: 9px 10px;
-    
+
     background: rgba(201, 232, 242, 0.5);
     border: 4px solid #ADA7EC;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -344,35 +344,20 @@ textarea{
         <div class="containerCardsGeral">
             <% for (items of items) { %>
 
-                <div class="containerModalEdit">
-                    <div class="modalEdit">
-                        <div class="fecharModal" onclick="fechar()">
-                            <ion-icon name="close-circle-outline"></ion-icon>
-                        </div>
-                        <div class="containerCard">
-                            <form action="/atualizar/<%= items._id %>?_method=PUT" method="post">
-                                <input class="titulo1" type="text" name="title" placeholder="Título" />
-                                <textarea class="anotacoes" name="content" rows="19" placeholder="Anotações"></textarea>
-                                <div class="btnCriar">
-                                    <button id="criar" type="submit"> <ion-icon name="add-circle-outline"></ion-icon>Editar </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+
 
                 <div class="Card">
                     <div class="iconsEditDelet">
-                        <form action="">
-                            <ion-icon id="editar" name="create-outline" onclick="modalEdit()"></ion-icon>
+                        <form action="/edit/atualizar/<%= items._id %>" method="get">
+                            <button id="deletarButton" type="submit"> <ion-icon id="editar" name="create-outline"></ion-icon></button>
                         </form>
                         <form method="post" action="/deletar/<%= items._id %>?_method=DELETE">
                             <button id="deletarButton" type="submit"> <ion-icon id="deletar" name="trash-outline"></ion-icon></button>
                         </form>
                     </div>
                     <div class="containerCard">
-                        <h3 id="titulo"> 
-                            <%= items.title %>  
+                        <h3 id="titulo">
+                            <%= items.title %>
                         </h3>
                         <p id="nota">
                             <%= items.content %>
@@ -412,7 +397,7 @@ function modalEdit(){
 }
     </script>
 </body>
-<script  type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" > </script> 
+<script  type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" > </script>
 <script  nomodule  src = "https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js" > </script>
 </html>
 

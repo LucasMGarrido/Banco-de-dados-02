@@ -8,10 +8,10 @@ const path = require('path')
 routes.get('/', (req, res) => res.redirect('/dev'))
 
 routes.get('/dev', noteController.ler)
-routes.put('/atualizar/:id', noteController.update)
 routes.delete('/deletar/:id', noteController.deletar);
 routes.get('/buscar', noteController.pesquisar);
-
+routes.put('/atualizar/:id', noteController.update);
+routes.get('/edit/atualizar/:id', noteController.renderizarPagina);
 
 
 

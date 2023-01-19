@@ -64,7 +64,7 @@ class noteController{
 
     async destroy(req, res){ //deleta o produto
         try{
-            
+
             const note = req.body;
 
            const noteDeleted = await noteModel.deleteOne(note);
@@ -82,22 +82,11 @@ class noteController{
 
     async ler (req, res){
         const items = await noteModel.find()
-    
+
         res.render('../views/front.ejs', {items : items})
     }
 
 
-    async update (req, res) {
-        const id = req.params.id
-        const nota = {
-            title: req.body.title,
-            content: req.body.content
-        }
-        const notaAtualizada = await noteModel.findByIdAndUpdate(id, nota)
-        console.log(id, nota)
-
-        res.redirect('/dev')
-    }
 
 
     async deletar (req, res) {
@@ -105,7 +94,7 @@ class noteController{
         await noteModel.findByIdAndDelete(id)
         res.redirect('/dev');
     }
-    
+
 
     async pesquisar (req, res) {
         const texto = req.body.txtPesquisa
@@ -115,9 +104,28 @@ class noteController{
         res.render('../views/front.ejs', {items : items})
     }
 
+    async renderizarPagina (req, res){
+        console.log("tá entrando no renderizar")
+        const id = req.params.id
+        console.log(id)
+        const items = await noteModel.findById(id)
+        res.render('../views/edit.ejs', {items})
+    }
+
+    async update (req, res) {
+        const id = req.params.id
+        const nota = {
+            title: req.body.title,
+            content: req.body.content
+        }
+        await noteModel.findByIdAndUpdate(id, nota)
+        console.log(id, nota)
+
+        res.redirect('/dev')
+    }
 
 }
 
-    
+
 
 module.exports = new noteController;
