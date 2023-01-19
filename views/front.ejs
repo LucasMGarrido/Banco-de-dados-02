@@ -93,9 +93,16 @@ textarea{
     width: 98%;
 }
 
-#titulo1{
+.containerCard .titulo1{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.titulo1{
     margin-top: 23px;
     justify-content: center;
+    align-items: center;
     text-align: center;
     font-size:medium;
     font-weight: bold;
@@ -323,8 +330,8 @@ textarea{
                 </div>
                 <div class="containerCard">
                     <form method="post">
-                        <input id="titulo1" type="text" name="title" placeholder="Título" />
-                        <textarea id="anotacoes" rows="19" name="content" placeholder="Anotações"></textarea>
+                        <input class="titulo1" type="text" name="title" placeholder="Título" />
+                        <textarea class="anotacoes" rows="19" name="content" placeholder="Anotações"></textarea>
 
                         <div class="btnCriar">
                             <button id="criar"> <ion-icon name="add-circle-outline"></ion-icon>Criar </button>
@@ -344,8 +351,8 @@ textarea{
                         </div>
                         <div class="containerCard">
                             <form action="/atualizar/<%= items._id %>?_method=PUT" method="post">
-                                <input id="titulo1" type="text" name="title" placeholder="Título" />
-                                <textarea id="anotacoes" name="content" rows="19" placeholder="Anotações"></textarea>
+                                <input class="titulo1" type="text" name="title" placeholder="Título" />
+                                <textarea class="anotacoes" name="content" rows="19" placeholder="Anotações"></textarea>
                                 <div class="btnCriar">
                                     <button id="criar" type="submit"> <ion-icon name="add-circle-outline"></ion-icon>Editar </button>
                                 </div>
