@@ -1,10 +1,10 @@
-#Notes
+# Notes
 
 Esse é um projeto da disciplina de Banco de Dados II do curso de Análise e Desenvolvimento de Sistemas do IFPB campus Cajazeiras. Foi projetado e desenvolvido uma aplicação de anotações, onde o usuário poderá criar, editar, deletar e pesquisar notas.
 
 ##
 
-###Inicialização
+### Inicialização
 
 Para iniciar o sistema:
 
@@ -19,13 +19,13 @@ O link do seu banco pode ser encontrado no site mongodb.com após efetuar o logi
 
 ##
 
-###Uso
+### Uso
 
 Após clonar o repositório, digitar npm run start no terminal. A aplicação é muito simples de usar e indicativa, como mostra nos exemplos de imagens onde pode criar, pesquisar, atualizar e excluir notas.
 
 ##
 
-###Imagens 
+### Imagens 
 
 ![img-app](https://user-images.githubusercontent.com/96030731/213621083-41cd7f00-c08d-4700-93dd-6d30e7cf1bb6.png)
 ![img-app2](https://user-images.githubusercontent.com/96030731/213621086-b1c933e3-8595-438e-bc07-f02cc585ace2.png)
