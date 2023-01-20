@@ -10,4 +10,6 @@ const noteSchema = new Schema({
 
 const noteModel = mongoose.model('notes', noteSchema);
 
+noteSchema.index({title:'text', content:'text'}, {weights:{title:2, content:1}, name:'indice'})
+
 module.exports = noteModel;

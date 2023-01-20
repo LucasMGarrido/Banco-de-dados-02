@@ -95,11 +95,10 @@ class noteController{
         res.redirect('/dev');
     }
 
-
     async pesquisar (req, res) {
-        const texto = req.body.txtPesquisa
-        console.log(texto)
-        const items = await noteModel.find({title:{query: texto}, content:{query: texto}})
+        const pesquisa = req.params.texto
+        console.log(pesquisa)
+        const items = await noteModel.find({$text:{$search:pesquisa}}, {score:{$meta:'textScore'}})
         console.log(items)
         res.render('../views/front.ejs', {items : items})
     }

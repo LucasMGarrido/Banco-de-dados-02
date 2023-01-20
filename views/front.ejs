@@ -314,13 +314,14 @@ textarea{
 
             <div class="retanguloBuscarAdd">
                 <div class="conteudoRBA">
-                    <form action="/buscar/?_method=GET" method="post" id="formPesquisar">
+                    <form id="formPesquisar">
                         <ion-icon name="search-outline"></ion-icon>
                         <input type="text" name="txtPesquisa" placeholder="Pesquisar" id="inputTextPesquisar">
-                        <input type="submit" value="Pesquisar" id="inputSubmitPesquisar">
+                        <button id="inputSubmitPesquisar" type="button" onclick="pesquisarTxt()">Pesquisar</button>
                     </form>
                 </div>
             </div>
+
         </div>
 
         <div class="containerModal">
@@ -343,8 +344,6 @@ textarea{
 
         <div class="containerCardsGeral">
             <% for (items of items) { %>
-
-
 
                 <div class="Card">
                     <div class="iconsEditDelet">
@@ -394,6 +393,11 @@ function fechar(){
 function modalEdit(){
     let modal = document.querySelector('.modalEdit').style.display = 'block';
     let fundo = document.querySelector('.fade').style.display = 'block';
+}
+
+function pesquisarTxt(){
+    let pesquisa = document.getElementById('inputTextPesquisar').value
+    window.location.href=`/buscar/${pesquisa}`
 }
     </script>
 </body>
