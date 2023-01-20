@@ -10,6 +10,9 @@ Para iniciar o sistema:
 
 1. clonar repositório.
 2. criar um arquivo .env na pasta raiz.
+3. npm i
+4. npm start![Captura de tela de 2023-01-20 15-48-04](https://user-images.githubusercontent.com/96030731/213781477-4dca1bf5-e74a-47cf-a7bd-deb763eb4d78.png)
+
 
 Exemplo de como deve ser feito o arquivo .env:
 
